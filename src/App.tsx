@@ -25,13 +25,11 @@ function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-navy-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <a href="#home" className="flex flex-col">
             <span className="text-gold-400 font-playfair font-bold text-lg leading-tight">JAY SAWARIYA SETH</span>
             <span className="text-white text-xs font-inter tracking-widest uppercase">Real Estate</span>
           </a>
 
-          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map(link => (
               <a key={link.name} href={link.href} className="text-white/80 hover:text-gold-400 transition-colors font-inter text-sm font-medium">
@@ -43,14 +41,12 @@ function Navbar() {
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden text-white text-2xl">
             <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-navy-900/98 backdrop-blur-md border-t border-white/10">
           <div className="px-4 py-6 space-y-4">
@@ -73,17 +69,14 @@ function Navbar() {
 function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop" alt="Luxury Property" className="w-full h-full object-cover" />
         <div className="hero-overlay absolute inset-0"></div>
       </div>
 
-      {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-royal-500/10 rounded-full blur-3xl"></div>
 
-      {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <div className="animate-fade-in-up">
           <p className="text-gold-400 font-inter text-sm md:text-base tracking-[0.3em] uppercase mb-4">Welcome to</p>
@@ -101,7 +94,6 @@ function HeroSection() {
             Your Dream Property, Our Priority
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="#buy" className="btn-gold px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2">
               <i className="fas fa-home"></i> Buy Property
@@ -115,7 +107,6 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { number: '500+', label: 'Properties Sold' },
@@ -131,7 +122,6 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
         <a href="#why-choose" className="text-white/50 hover:text-gold-400 transition-colors">
           <i className="fas fa-chevron-down text-2xl"></i>
@@ -181,11 +171,11 @@ function WhyChooseSection() {
 // ============ PROPERTY CATEGORIES ============
 function CategoriesSection() {
   const categories = [
-    { icon: '🏢', name: 'Flats & Apartments', count: '120+ Properties' },
-    { icon: '🏡', name: 'Villas & Bungalows', count: '45+ Properties' },
-    { icon: '🏪', name: 'Shops & Showrooms', count: '80+ Properties' },
-    { icon: '🏢', name: 'Offices & Godowns', count: '60+ Properties' },
-    { icon: '🌳', name: 'Land & Plots', count: '90+ Properties' },
+    { icon: '🏢', name: 'Flats & Apartments', count: '120+ Properties', href: '#buy' },
+    { icon: '🏡', name: 'Villas & Bungalows', count: '45+ Properties', href: '#buy' },
+    { icon: '🏪', name: 'Shops & Showrooms', count: '80+ Properties', href: '#buy' },
+    { icon: '🏢', name: 'Offices & Godowns', count: '60+ Properties', href: '#buy' },
+    { icon: '🌳', name: 'Land & Plots', count: '90+ Properties', href: '#buy' },
   ];
 
   return (
@@ -199,7 +189,7 @@ function CategoriesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {categories.map((cat, i) => (
-            <a key={i} href="#buy" className="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 hover:border-gold-400/30 transition-all">
+            <a key={i} href={cat.href} className="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 hover:border-gold-400/30 transition-all">
               <div className="text-5xl mb-4">{cat.icon}</div>
               <h3 className="text-white font-inter font-semibold text-base mb-1">{cat.name}</h3>
               <p className="text-gold-400 font-inter text-xs">{cat.count}</p>
@@ -211,15 +201,15 @@ function CategoriesSection() {
   );
 }
 
-// ============ PROPERTY CARD ============
-function PropertyCard({ property }: { property: Property }) {
+// ============ BUY PROPERTY CARD ============
+function BuyPropertyCard({ property }: { property: Property }) {
   return (
     <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
       <div className="relative">
         <img src={property.image} alt={property.name} className="w-full h-56 object-cover" />
         <div className="absolute top-4 left-4">
-          <span className={`px-3 py-1 rounded-full text-xs font-semibold ${property.status === 'sale' ? 'bg-green-500 text-white' : 'bg-blue-500 text-white'}`}>
-            {property.status === 'sale' ? 'For Sale' : 'For Rent'}
+          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">
+            For Sale
           </span>
         </div>
         <div className="absolute top-4 right-4">
@@ -240,18 +230,54 @@ function PropertyCard({ property }: { property: Property }) {
         </div>
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <p className="font-playfair text-xl font-bold text-gold-500">{property.price}</p>
-          <div className="flex gap-2">
-            <a href="#contact" className="px-4 py-2 bg-navy-900 text-white text-xs rounded-full hover:bg-navy-700 transition-colors">
-              Enquire
-            </a>
-          </div>
+          <a href="#contact" className="px-4 py-2 bg-navy-900 text-white text-xs rounded-full hover:bg-navy-700 transition-colors">
+            Enquire Now
+          </a>
         </div>
       </div>
     </div>
   );
 }
 
-// ============ FEATURED PROPERTIES ============
+// ============ RENT PROPERTY CARD ============
+function RentPropertyCard({ property }: { property: Property }) {
+  return (
+    <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+      <div className="relative">
+        <img src={property.image} alt={property.name} className="w-full h-56 object-cover" />
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500 text-white">
+            For Rent
+          </span>
+        </div>
+        <div className="absolute top-4 right-4">
+          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-navy-900/80 text-gold-400">
+            {property.type}
+          </span>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="font-playfair text-lg font-bold text-navy-900 mb-2">{property.name}</h3>
+        <p className="text-gray-500 font-inter text-sm flex items-center gap-1 mb-3">
+          <i className="fas fa-map-marker-alt text-gold-500 text-xs"></i> {property.location}
+        </p>
+        <div className="flex items-center gap-4 text-gray-500 text-xs mb-4">
+          {property.bedrooms && <span><i className="fas fa-bed text-gold-500 mr-1"></i>{property.bedrooms} Beds</span>}
+          {property.bathrooms && <span><i className="fas fa-bath text-gold-500 mr-1"></i>{property.bathrooms} Baths</span>}
+          {property.area && <span><i className="fas fa-ruler-combined text-gold-500 mr-1"></i>{property.area}</span>}
+        </div>
+        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+          <p className="font-playfair text-xl font-bold text-gold-500">{property.price}</p>
+          <a href="#contact" className="px-4 py-2 bg-navy-900 text-white text-xs rounded-full hover:bg-navy-700 transition-colors">
+            Enquire Now
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============ FEATURED PROPERTIES (Homepage) ============
 function FeaturedSection() {
   return (
     <section className="py-20 bg-white">
@@ -260,18 +286,47 @@ function FeaturedSection() {
           <p className="text-gold-500 font-inter text-sm tracking-widest uppercase mb-3">Featured Properties</p>
           <h2 className="font-playfair text-3xl md:text-5xl font-bold text-navy-900 mb-4">Handpicked for You</h2>
           <div className="section-divider mb-6"></div>
-          <p className="text-gray-600 font-inter max-w-2xl mx-auto">Discover our premium selection of properties in Ahmedabad's most desirable locations.</p>
+          <p className="text-gray-600 font-inter max-w-2xl mx-auto">Discover our premium selection of properties — available for both purchase and rent in Ahmedabad's most desirable locations.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProperties.map(property => (
-            <PropertyCard key={property.id} property={property} />
+            <div key={property.id} className="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+              <div className="relative">
+                <img src={property.image} alt={property.name} className="w-full h-56 object-cover" />
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-navy-900/80 text-gold-400">
+                    {property.type}
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-playfair text-lg font-bold text-navy-900 mb-2">{property.name}</h3>
+                <p className="text-gray-500 font-inter text-sm flex items-center gap-1 mb-3">
+                  <i className="fas fa-map-marker-alt text-gold-500 text-xs"></i> {property.location}
+                </p>
+                <div className="flex items-center gap-4 text-gray-500 text-xs mb-4">
+                  {property.bedrooms && <span><i className="fas fa-bed text-gold-500 mr-1"></i>{property.bedrooms} Beds</span>}
+                  {property.bathrooms && <span><i className="fas fa-bath text-gold-500 mr-1"></i>{property.bathrooms} Baths</span>}
+                  {property.area && <span><i className="fas fa-ruler-combined text-gold-500 mr-1"></i>{property.area}</span>}
+                </div>
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <p className="font-playfair text-xl font-bold text-gold-500">{property.price}</p>
+                  <a href="#contact" className="px-4 py-2 bg-navy-900 text-white text-xs rounded-full hover:bg-navy-700 transition-colors">
+                    Enquire
+                  </a>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
           <a href="#buy" className="btn-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
-            View All Properties <i className="fas fa-arrow-right"></i>
+            <i className="fas fa-shopping-cart"></i> View All for Sale
+          </a>
+          <a href="#rent" className="btn-outline-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
+            <i className="fas fa-key"></i> View All for Rent
           </a>
         </div>
       </div>
@@ -279,11 +334,17 @@ function FeaturedSection() {
   );
 }
 
-// ============ BUY SECTION ============
+// ============ BUY SECTION (Only Sale Properties) ============
 function BuySection() {
   const [activeCategory, setActiveCategory] = useState('all');
   
-  const categories = ['all', 'residential', 'commercial', 'land'];
+  const categories = [
+    { key: 'all', label: 'All Properties' },
+    { key: 'residential', label: '🏠 Residential' },
+    { key: 'commercial', label: '🏢 Commercial' },
+    { key: 'land', label: '🌳 Land & Plots' },
+  ];
+  
   const filtered = activeCategory === 'all' ? buyProperties : buyProperties.filter(p => p.category === activeCategory);
 
   return (
@@ -293,33 +354,43 @@ function BuySection() {
           <p className="text-gold-500 font-inter text-sm tracking-widest uppercase mb-3">Buy Property</p>
           <h2 className="font-playfair text-3xl md:text-5xl font-bold text-navy-900 mb-4">Find Your Dream Property</h2>
           <div className="section-divider mb-6"></div>
-          <p className="text-gray-600 font-inter max-w-2xl mx-auto">Browse through our exclusive collection of properties available for purchase in prime locations.</p>
+          <p className="text-gray-600 font-inter max-w-2xl mx-auto">Browse through our exclusive collection of properties available for <strong>purchase</strong> in prime locations of Ahmedabad.</p>
         </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map(cat => (
             <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${activeCategory === cat ? 'btn-gold' : 'bg-white text-gray-600 border border-gray-200 hover:border-gold-400 hover:text-gold-500'}`}
+              key={cat.key}
+              onClick={() => setActiveCategory(cat.key)}
+              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${activeCategory === cat.key ? 'btn-gold' : 'bg-white text-gray-600 border border-gray-200 hover:border-gold-400 hover:text-gold-500'}`}
             >
-              {cat === 'all' ? 'All Properties' : cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat.label}
             </button>
           ))}
         </div>
 
+        {/* Properties Grid - ONLY BUY */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map(property => (
-            <PropertyCard key={property.id} property={property} />
+            <BuyPropertyCard key={property.id} property={property} />
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-12 bg-navy-900 rounded-2xl p-8">
+          <h3 className="font-playfair text-2xl font-bold text-white mb-3">Can't find what you're looking for?</h3>
+          <p className="text-white/70 font-inter text-sm mb-6">Tell us your requirements and we'll find the perfect property for you.</p>
+          <a href="#contact" className="btn-gold px-8 py-3 rounded-full text-sm inline-flex items-center gap-2">
+            <i className="fas fa-search"></i> Tell Us Your Requirement
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-// ============ SELL SECTION ============
+// ============ SELL SECTION (Only Sell Form & Info) ============
 function SellSection() {
   const [formData, setFormData] = useState({
     name: '', phone: '', propertyType: '', location: '', expectedPrice: '', message: ''
@@ -333,7 +404,6 @@ function SellSection() {
 
   return (
     <section id="sell" className="py-20 gradient-navy relative overflow-hidden">
-      {/* Decorative */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-royal-500/10 rounded-full blur-3xl"></div>
 
@@ -345,14 +415,14 @@ function SellSection() {
           <p className="text-white/70 font-inter max-w-2xl mx-auto">Get the best value for your property. We connect you with the right buyers at the right price.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left - Highlights */}
           <div>
             <div className="space-y-6 mb-10">
               {[
-                { icon: 'fas fa-bullseye', title: 'Right Property', desc: 'We market your property to the right audience.' },
-                { icon: 'fas fa-users', title: 'Right People', desc: 'Connect with genuine and verified buyers.' },
-                { icon: 'fas fa-indian-rupee-sign', title: 'Right Price', desc: 'Get the best market value for your property.' },
+                { icon: 'fas fa-bullseye', title: 'Right Property', desc: 'We market your property to the right audience with professional listings and photography.' },
+                { icon: 'fas fa-users', title: 'Right People', desc: 'Connect with genuine, verified, and serious buyers who are ready to invest.' },
+                { icon: 'fas fa-indian-rupee-sign', title: 'Right Price', desc: 'Get the best market value for your property with our expert valuation.' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
                   <div className="w-12 h-12 rounded-full gradient-gold flex items-center justify-center flex-shrink-0">
@@ -365,24 +435,48 @@ function SellSection() {
                 </div>
               ))}
             </div>
+
+            {/* Benefits */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <h4 className="text-gold-400 font-semibold text-lg mb-4">Why Sell With Us?</h4>
+              <ul className="space-y-3">
+                {[
+                  'Free property valuation',
+                  'Professional photography & listing',
+                  'Wide network of verified buyers',
+                  'Complete legal assistance',
+                  'Fast & hassle-free process',
+                  'No hidden charges',
+                ].map((benefit, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
+                    <i className="fas fa-check-circle text-gold-400"></i>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Right - Form */}
           <div className="bg-white rounded-2xl p-8 shadow-2xl">
-            <h3 className="font-playfair text-2xl font-bold text-navy-900 mb-6">Submit Your Property</h3>
+            <h3 className="font-playfair text-2xl font-bold text-navy-900 mb-2">Submit Your Property</h3>
+            <p className="text-gray-500 text-sm font-inter mb-6">Fill in the details below and our team will get back to you within 24 hours.</p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <input type="text" placeholder="Your Name" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
+                <label className="text-navy-900 text-xs font-semibold font-inter mb-1 block">Your Name *</label>
+                <input type="text" placeholder="Enter your full name" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all text-sm" />
               </div>
               <div>
-                <input type="tel" placeholder="Phone Number" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})}
+                <label className="text-navy-900 text-xs font-semibold font-inter mb-1 block">Phone Number *</label>
+                <input type="tel" placeholder="Enter your phone number" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all text-sm" />
               </div>
               <div>
+                <label className="text-navy-900 text-xs font-semibold font-inter mb-1 block">Property Type *</label>
                 <select required value={formData.propertyType} onChange={e => setFormData({...formData, propertyType: e.target.value})}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all text-sm text-gray-600">
-                  <option value="">Property Type</option>
+                  <option value="">Select Property Type</option>
                   <option>Flat & Apartment</option>
                   <option>Villa & Bungalow</option>
                   <option>Shop & Showroom</option>
@@ -391,18 +485,21 @@ function SellSection() {
                 </select>
               </div>
               <div>
-                <input type="text" placeholder="Property Location" required value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})}
+                <label className="text-navy-900 text-xs font-semibold font-inter mb-1 block">Property Location *</label>
+                <input type="text" placeholder="e.g., Bopal, Ahmedabad" required value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all text-sm" />
               </div>
               <div>
-                <input type="text" placeholder="Expected Price" value={formData.expectedPrice} onChange={e => setFormData({...formData, expectedPrice: e.target.value})}
+                <label className="text-navy-900 text-xs font-semibold font-inter mb-1 block">Expected Price</label>
+                <input type="text" placeholder="e.g., ₹1.5 Cr" value={formData.expectedPrice} onChange={e => setFormData({...formData, expectedPrice: e.target.value})}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all text-sm" />
               </div>
               <div>
-                <textarea placeholder="Additional Message" rows={3} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}
+                <label className="text-navy-900 text-xs font-semibold font-inter mb-1 block">Additional Message</label>
+                <textarea placeholder="Any additional details about your property..." rows={3} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all text-sm resize-none"></textarea>
               </div>
-              <button type="submit" className="w-full btn-gold py-4 rounded-lg text-base">
+              <button type="submit" className="w-full btn-gold py-4 rounded-lg text-base mt-2">
                 <i className="fas fa-paper-plane mr-2"></i> Submit Property
               </button>
             </form>
@@ -413,10 +510,16 @@ function SellSection() {
   );
 }
 
-// ============ RENT SECTION ============
+// ============ RENT SECTION (Only Rental Properties) ============
 function RentSection() {
   const [activeCategory, setActiveCategory] = useState('all');
-  const categories = ['all', 'residential', 'commercial'];
+  
+  const categories = [
+    { key: 'all', label: 'All Rentals' },
+    { key: 'residential', label: '🏠 Residential' },
+    { key: 'commercial', label: '🏢 Commercial' },
+  ];
+  
   const filtered = activeCategory === 'all' ? rentProperties : rentProperties.filter(p => p.category === activeCategory);
 
   return (
@@ -426,26 +529,36 @@ function RentSection() {
           <p className="text-gold-500 font-inter text-sm tracking-widest uppercase mb-3">Rent Property</p>
           <h2 className="font-playfair text-3xl md:text-5xl font-bold text-navy-900 mb-4">Find a Place That Fits Your Needs</h2>
           <div className="section-divider mb-6"></div>
-          <p className="text-gray-600 font-inter max-w-2xl mx-auto">Explore our rental properties — from cozy apartments to spacious commercial spaces.</p>
+          <p className="text-gray-600 font-inter max-w-2xl mx-auto">Explore our rental properties — from cozy apartments to spacious commercial spaces, all available for <strong>rent</strong>.</p>
         </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {['all', 'residential', 'commercial'].map(cat => (
+          {categories.map(cat => (
             <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${activeCategory === cat ? 'btn-gold' : 'bg-gray-100 text-gray-600 border border-gray-200 hover:border-gold-400 hover:text-gold-500'}`}
+              key={cat.key}
+              onClick={() => setActiveCategory(cat.key)}
+              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${activeCategory === cat.key ? 'btn-gold' : 'bg-gray-100 text-gray-600 border border-gray-200 hover:border-gold-400 hover:text-gold-500'}`}
             >
-              {cat === 'all' ? 'All Rentals' : cat === 'residential' ? '🏠 Residential' : '🏢 Commercial'}
+              {cat.label}
             </button>
           ))}
         </div>
 
+        {/* Properties Grid - ONLY RENT */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filtered.map(property => (
-            <PropertyCard key={property.id} property={property} />
+            <RentPropertyCard key={property.id} property={property} />
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-12 bg-navy-900 rounded-2xl p-8">
+          <h3 className="font-playfair text-2xl font-bold text-white mb-3">Looking for something specific?</h3>
+          <p className="text-white/70 font-inter text-sm mb-6">Share your rental requirements — budget, location, type — and we'll find the perfect match.</p>
+          <a href="#contact" className="btn-gold px-8 py-3 rounded-full text-sm inline-flex items-center gap-2">
+            <i className="fas fa-search"></i> Share Your Requirement
+          </a>
         </div>
       </div>
     </section>
@@ -458,19 +571,16 @@ function AboutSection() {
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Image */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=500&fit=crop" alt="About Us" className="w-full h-[500px] object-cover" />
             </div>
-            {/* Floating card */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-[200px]">
               <p className="font-playfair text-3xl font-bold text-gold-500">10+</p>
               <p className="text-gray-600 text-sm font-inter">Years of Trusted Service</p>
             </div>
           </div>
 
-          {/* Right - Content */}
           <div>
             <p className="text-gold-500 font-inter text-sm tracking-widest uppercase mb-3">About Us</p>
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy-900 mb-4">About Jay Sawariya Seth</h2>
@@ -483,7 +593,6 @@ function AboutSection() {
               Our mission is simple — to make your property dreams come true. Whether you're looking to buy your first home, sell a valued asset, or find the perfect rental, we are here to guide you every step of the way.
             </p>
 
-            {/* Key Points */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { icon: 'fas fa-heart', text: '100% Client Satisfaction' },
@@ -519,16 +628,15 @@ function LocationSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="rounded-2xl overflow-hidden shadow-lg h-[400px]">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.904!2d72.5098!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwMzAnMzUuMyJF!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy"
-              title="Office Location"
-            ></iframe>
+          <div className="rounded-2xl overflow-hidden shadow-lg h-[400px] bg-gray-200 flex items-center justify-center">
+            <div className="text-center p-8">
+              <i className="fas fa-map-marked-alt text-6xl text-gold-500 mb-4"></i>
+              <h4 className="font-playfair text-xl font-bold text-navy-900 mb-2">Our Office Location</h4>
+              <p className="text-gray-600 text-sm font-inter">Garden Paradise, 2, Near Reliance Villa,<br/>Behind Divya Jyoti School Road,<br/>Ahmedabad, Gujarat 380018</p>
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn-gold px-6 py-2.5 rounded-full text-sm inline-flex items-center gap-2 mt-4">
+                <i className="fas fa-directions"></i> Get Directions
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col justify-center">
@@ -614,7 +722,6 @@ function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
             <h3 className="font-playfair text-2xl font-bold text-white mb-6">Send Enquiry</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -644,7 +751,6 @@ function ContactSection() {
             </form>
           </div>
 
-          {/* Contact Info & CTAs */}
           <div className="flex flex-col justify-center">
             <div className="space-y-6 mb-10">
               <div className="flex items-center gap-4">
@@ -676,7 +782,6 @@ function ContactSection() {
               </div>
             </div>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:+919876543210" className="flex-1 flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-xl transition-all font-semibold">
                 <i className="fas fa-phone text-lg"></i>
@@ -700,7 +805,6 @@ function Footer() {
     <footer className="bg-navy-900 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
           <div>
             <h3 className="font-playfair text-xl font-bold text-gold-400 mb-1">JAY SAWARIYA SETH</h3>
             <p className="text-white/50 text-xs tracking-widest uppercase mb-4">Real Estate</p>
@@ -716,31 +820,35 @@ function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'Buy Property', 'Sell Property', 'Rent Property', 'About Us', 'Contact'].map((link, i) => (
+              {[
+                { name: 'Home', href: '#home' },
+                { name: 'Buy Property', href: '#buy' },
+                { name: 'Sell Property', href: '#sell' },
+                { name: 'Rent Property', href: '#rent' },
+                { name: 'About Us', href: '#about' },
+                { name: 'Contact', href: '#contact' },
+              ].map((link, i) => (
                 <li key={i}>
-                  <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-white/60 hover:text-gold-400 text-sm transition-colors font-inter">{link}</a>
+                  <a href={link.href} className="text-white/60 hover:text-gold-400 text-sm transition-colors font-inter">{link.name}</a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Property Types */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Property Types</h4>
+            <h4 className="text-white font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
-              {['Flats & Apartments', 'Villas & Bungalows', 'Shops & Showrooms', 'Offices & Godowns', 'Land & Plots'].map((type, i) => (
+              {['Property Buying', 'Property Selling', 'Property Renting', 'Legal Assistance', 'Property Valuation', 'Investment Advice'].map((type, i) => (
                 <li key={i}>
-                  <a href="#buy" className="text-white/60 hover:text-gold-400 text-sm transition-colors font-inter">{type}</a>
+                  <a href="#contact" className="text-white/60 hover:text-gold-400 text-sm transition-colors font-inter">{type}</a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-white font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-3">
@@ -761,7 +869,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-sm font-inter">© 2024 Jay Sawariya Seth Real Estate. All rights reserved.</p>
