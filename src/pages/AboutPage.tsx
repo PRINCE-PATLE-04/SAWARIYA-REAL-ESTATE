@@ -16,7 +16,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="https://kommodo.ai/i/l7cGbNM2eUP5fKnJP2du" alt="Jay Sawariya Seth Real Estate" className="w-full h-[500px] object-cover" />
+                <img src="https://image.qwenlm.ai/generated-images/e79c348d-5d59-48b3-a6a8-bfdbd4da9803/_result.png" alt="Jay Sawariya Seth Real Estate" className="w-full h-[500px] object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-[200px]">
                 <p className="font-playfair text-3xl font-bold text-gold-500">10+</p>
