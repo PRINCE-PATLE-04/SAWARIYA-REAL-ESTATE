@@ -48,15 +48,19 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <i className="fas fa-map-marker-alt text-gold-400 mt-1 text-sm"></i>
-                <span className="text-white/60 text-sm font-inter">Garden Paradise, 2, Near Reliance Villa, Ahmedabad - 380018</span>
+                <span className="text-white/60 text-sm font-inter">Q-404, Garden Paradise, Near Nilkanth Villa, Behind Divya Jyot School Road, Ahmedabad, Gujarat 380058</span>
               </li>
               <li className="flex items-center gap-3">
                 <i className="fas fa-phone text-gold-400 text-sm"></i>
-                <span className="text-white/60 text-sm font-inter">+91 98765 43210</span>
+                <span className="text-white/60 text-sm font-inter">+91 90677 49526</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <i className="fas fa-phone text-gold-400 text-sm"></i>
+                <span className="text-white/60 text-sm font-inter">+91 79764 08747</span>
               </li>
               <li className="flex items-center gap-3">
                 <i className="fas fa-envelope text-gold-400 text-sm"></i>
-                <span className="text-white/60 text-sm font-inter">info@jaysawariyaseth.com</span>
+                <span className="text-white/60 text-sm font-inter">sureshpatidar7976@gmail.com</span>
               </li>
             </ul>
           </div>

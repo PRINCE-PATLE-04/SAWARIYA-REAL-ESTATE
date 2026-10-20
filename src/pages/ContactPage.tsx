@@ -67,7 +67,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-navy-900 font-semibold">Our Office</p>
-                    <p className="text-gray-600 text-sm font-inter">Garden Paradise, 2, Near Reliance Villa,<br/>Behind Divya Jyoti School Road,<br/>Ahmedabad, Gujarat 380018, India</p>
+                    <p className="text-gray-600 text-sm font-inter">Q-404, Garden Paradise, Near Nilkanth Villa,<br/>Behind Divya Jyot School Road,<br/>Ahmedabad, Gujarat 380058, India</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 bg-gray-50 rounded-xl p-5 border border-gray-100">
@@ -76,7 +76,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-navy-900 font-semibold">Call Us</p>
-                    <p className="text-gray-600 text-sm font-inter">+91 98765 43210</p>
+                    <p className="text-gray-600 text-sm font-inter">+91 90677 49526</p>
+                    <p className="text-gray-600 text-sm font-inter">+91 79764 08747</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 bg-gray-50 rounded-xl p-5 border border-gray-100">
@@ -85,7 +86,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-navy-900 font-semibold">Email Us</p>
-                    <p className="text-gray-600 text-sm font-inter">info@jaysawariyaseth.com</p>
+                    <p className="text-gray-600 text-sm font-inter">sureshpatidar7976@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 bg-gray-50 rounded-xl p-5 border border-gray-100">
@@ -102,11 +103,11 @@ export default function ContactPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+919876543210" className="flex-1 flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-xl transition-all font-semibold">
+                <a href="tel:+919067749526" className="flex-1 flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-xl transition-all font-semibold">
                   <i className="fas fa-phone text-lg"></i>
                   <span>Call Now</span>
                 </a>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white py-4 px-6 rounded-xl transition-all font-semibold">
+                <a href="https://wa.me/919067749526" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white py-4 px-6 rounded-xl transition-all font-semibold">
                   <i className="fab fa-whatsapp text-xl"></i>
                   <span>WhatsApp</span>
                 </a>
@@ -127,8 +128,8 @@ export default function ContactPage() {
             <div className="text-center p-8">
               <i className="fas fa-map-marked-alt text-6xl text-gold-500 mb-4"></i>
               <h4 className="font-playfair text-xl font-bold text-navy-900 mb-2">Our Office Location</h4>
-              <p className="text-gray-600 text-sm font-inter">Garden Paradise, 2, Near Reliance Villa,<br/>Behind Divya Jyoti School Road,<br/>Ahmedabad, Gujarat 380018</p>
-              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn-gold px-6 py-2.5 rounded-full text-sm inline-flex items-center gap-2 mt-4">
+              <p className="text-gray-600 text-sm font-inter">Q-404, Garden Paradise, Near Nilkanth Villa,<br/>Behind Divya Jyot School Road,<br/>Ahmedabad, Gujarat 380058, India</p>
+              <a href="https://maps.google.com/?q=Q-404+Garden+Paradise+Ahmedabad" target="_blank" rel="noopener noreferrer" className="btn-gold px-6 py-2.5 rounded-full text-sm inline-flex items-center gap-2 mt-4">
                 <i className="fas fa-directions"></i> Get Directions
               </a>
             </div>

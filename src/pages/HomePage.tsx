@@ -8,7 +8,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop" alt="Luxury Property" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop" alt="Jay Sawariya Seth Real Estate" className="w-full h-full object-cover" />
           <div className="hero-overlay absolute inset-0"></div>
         </div>
 
@@ -184,7 +184,7 @@ export default function HomePage() {
             <Link to="/contact" className="btn-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
               <i className="fas fa-phone"></i> Contact Us
             </Link>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
+            <a href="https://wa.me/919067749526" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
               <i className="fab fa-whatsapp"></i> WhatsApp Us
             </a>
           </div>
