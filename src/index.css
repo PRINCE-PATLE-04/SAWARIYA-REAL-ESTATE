@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f2140;
+  --color-navy-700: #142d54;
+  --color-navy-600: #1a3a6b;
+  --color-royal-500: #1e4d8c;
+  --color-royal-400: #2563a8;
+  --color-gold-500: #d4a017;
+  --color-gold-400: #e6b422;
+  --color-gold-300: #f0c94d;
+  --color-gold-200: #f5d97a;
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.gradient-navy {
+  background: linear-gradient(135deg, #0a1628 0%, #142d54 50%, #0f2140 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #d4a017 0%, #f0c94d 50%, #d4a017 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #d4a017, #f0c94d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.92) 0%, rgba(20, 45, 84, 0.85) 50%, rgba(10, 22, 40, 0.9) 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #d4a017, #f0c94d);
+  color: #0a1628;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #f0c94d, #d4a017);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 160, 23, 0.3);
+}
+
+.btn-outline-gold {
+  border: 2px solid #d4a017;
+  color: #d4a017;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+  background: linear-gradient(135deg, #d4a017, #f0c94d);
+  color: #0a1628;
+  transform: translateY(-2px);
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #d4a017, #f0c94d);
+  margin: 0 auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
