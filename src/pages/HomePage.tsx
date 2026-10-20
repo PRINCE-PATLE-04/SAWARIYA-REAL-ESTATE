@@ -8,7 +8,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop" alt="Jay Sawariya Seth Real Estate" className="w-full h-full object-cover" />
+          <img src="https://kommodo.ai/i/pCAZbiiIpOHyR7VWA1qS" alt="Jay Sawariya Seth Real Estate" className="w-full h-full object-cover" />
           <div className="hero-overlay absolute inset-0"></div>
         </div>
 
@@ -135,13 +135,16 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Link to="/buy" className="btn-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
-              <i className="fas fa-shopping-cart"></i> View All for Sale
-            </Link>
-            <Link to="/rent" className="btn-outline-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
-              <i className="fas fa-key"></i> View All for Rent
-            </Link>
+          <div className="text-center mt-12">
+            <p className="text-gray-600 font-inter mb-4">For more details, visit our site or contact us directly.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/buy" className="btn-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
+                <i className="fas fa-shopping-cart"></i> View All for Sale
+              </Link>
+              <Link to="/rent" className="btn-outline-gold px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
+                <i className="fas fa-key"></i> View All for Rent
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -152,7 +155,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=500&fit=crop" alt="About Us" className="w-full h-[500px] object-cover" />
+                <img src="https://kommodo.ai/i/l7cGbNM2eUP5fKnJP2du" alt="Jay Sawariya Seth Real Estate" className="w-full h-[500px] object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-[200px]">
                 <p className="font-playfair text-3xl font-bold text-gold-500">10+</p>
